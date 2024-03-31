@@ -3,13 +3,13 @@
 #define INCLUDE_AUTOMATA_H_
 #include <map>
 #include <string>
-enum States {Off, Wait, Accept,Check, Cook};
+enum States {Off, Wait, Accept, Check, Cook};
 class Automata {
  private:
     int cash;
     std::map<std::string, int> prices;
     States state;
-public:
+ public:
     Automata();
     ~Automata();
     void on();
