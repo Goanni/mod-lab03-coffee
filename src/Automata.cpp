@@ -23,7 +23,7 @@ void Automata::on() {
     if (state == Off) {
         state = Wait;
         std::cout << "ON" << std::endl;
-    } else{
+    } else {
     std::cout << "The machine is already turned on" << std::endl;
   }
 }
@@ -32,7 +32,7 @@ void Automata::off() {
     if (state == Wait) {
         state = Off;
         std::cout << "\nMachine is off" << std::endl;
-    } else{
+    } else {
     std::cout << "\nWait for the machine to complete the process" << std::endl;
   }
 }
@@ -42,7 +42,7 @@ void Automata::coin(int money) {
         cash += money;
         state = Accept;
         std::cout << "\nMoney is accepted" << cash << std::endl;
-    } else{
+    } else {
     std::cout << "\nOperation cannot be performed" << std::endl;
   }
 }
@@ -52,12 +52,12 @@ void Automata::getMenu() {
     if (state == Wait || state == Accept) {
         for (const auto& element : prices)
             std::cout << element.first << "\t" << element.second << std::endl;
-    } else{
+    } else {
     std::cout << "\nOperation cannot be performed" << std::endl;
   }
 }
 
-states Automata::getState() {
+States Automata::getState() {
     return state;
 }
 
@@ -70,7 +70,7 @@ void Automata::choice(std::string name) {
             if (check(name))
                 cook(name);
             }
-        } else{
+        } else {
     std::cout << "\nOperation cannot be performed" << std::endl;
   }
 }
@@ -88,31 +88,29 @@ void Automata::cancel() {
         cash = 0;
         state = Wait;
         std::cout << "\nThe order is cancelled" << std::endl;
-    } else{
+    } else {
     std::cout << "\nOperation cannot be performed" << std::endl;
   }
 }
 
 void Automata::cook(std::string name) {
-  if (state == Check)
-  {
+  if (state == Check) {
     cash -= prices.find(name)->second;
     state = Cook;
     std::cout << "\nThe drink is cooked" << std::endl;
     finish(name);
-  } else{
+  } else {
     std::cout << "\nOperation cannot be performed" << std::endl;
   }
 }
 
 void Automata::finish(std::string name) {
-  if(state == Cook)
-  {
+  if (state == Cook) {
     std::cout << "\nYour change" << cash << std::endl;
     std::cout << "\nYour drink " << name << " is ready!" << std::endl;
     cash = 0;
     state = Wait;
-  } else{
+  } else {
     std::cout << "\nOperation cannot be performed" << std::endl;
   }
 }
