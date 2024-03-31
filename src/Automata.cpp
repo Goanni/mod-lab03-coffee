@@ -1,3 +1,4 @@
+// Copyright 2024 Goanni
 #include "Automata.h"
 #include <string>
 #include <map>
