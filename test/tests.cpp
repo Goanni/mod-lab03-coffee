@@ -1,3 +1,4 @@
+// Copyright 2024 Goanni
 #include <gtest/gtest.h>
 #include "Automata.h"
 class AutomataTest : public testing::Test {
@@ -43,9 +44,8 @@ TEST(AutomataTest, test5) {
     EXPECT_EQ(false, Machine.check("green tea"));
 }
 
-TEST(AutomateTest, test6)
-{
-  Automata Machine;
+TEST(AutomateTest, test6) {
+    Automata Machine;
     CoffeeBreak.off();
     EXPECT_EQ(OFF, Machine.getState());
 }
