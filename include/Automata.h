@@ -23,4 +23,4 @@ public:
     void cook(std::string name);
     void finish(std::string name);
 };
-#endif
+#endif // INCLUDE_AUTOMATA_H_
