@@ -46,6 +46,6 @@ TEST(AutomataTest, test5) {
 
 TEST(AutomateTest, test6) {
     Automata Machine;
-    CoffeeBreak.off();
-    EXPECT_EQ(OFF, Machine.getState());
+    Machine.off();
+    EXPECT_EQ(Off, Machine.getState());
 }
